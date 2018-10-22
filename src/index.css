@@ -12,3 +12,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.logo-img {
+  height: 325px;
+  padding-top: 5em;
+}
+
+.landing-grid {
+
+ position: fixed;
+ top: 0;
+ left: 0;
+}
