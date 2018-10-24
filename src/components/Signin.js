@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {Grid, Cell, Textfield, Button } from 'react-mdl';
-import { firebaseApp } from '../firebase';
+import { firebaseApp } from '../config/firebase';
 import { withRouter } from 'react-router-dom';
 import logo from './../assets/logo.png';
 
-class Signin extends Component {
+class SignIn extends Component {
   constructor(props) {
      super(props);
      this.state = {
@@ -60,4 +60,4 @@ class Signin extends Component {
   }
 }
 
-export default withRouter(Signin);
+export default withRouter(SignIn);

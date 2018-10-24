@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter, Route } from 'react-router-dom';
-import SignIn from './components/SignIn'
+import SignIn from './components/Signin'
 
 
 ReactDOM.render(<BrowserRouter basename = { process.env.PUBLIC_URL } >
