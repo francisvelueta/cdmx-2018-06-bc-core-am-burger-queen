@@ -9,7 +9,7 @@ import { createStore } from 'redux';
 import combineReducers from './reducers/combineReducers';
 import { Provider } from 'react-redux';
 
-<<<<<<< HEAD
+const store = createStore(combineReducers)
 // this.props.history.goBack()
 //
 // const withRouter=() => (
@@ -17,9 +17,6 @@ import { Provider } from 'react-redux';
 //   <App/>
 //   </BrowserRouter>
 // )
-ReactDOM.render(
-
-const store = createStore(combineReducers)
 
 ReactDOM.render(
   <Provider store = {store}>
@@ -29,7 +26,7 @@ ReactDOM.render(
             <Route  path = '/signin' component = { SignIn } />
 
       </Switch>
-    </BrowserRouter>, document.getElementById('root'));
+    </BrowserRouter></Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
