@@ -10,6 +10,7 @@ import combineReducers from './reducers/combineReducers';
 import { Provider } from 'react-redux';
 
 const store = createStore(combineReducers)
+<<<<<<< HEAD
 // this.props.history.goBack()
 //
 // const withRouter=() => (
@@ -17,6 +18,8 @@ const store = createStore(combineReducers)
 //   <App/>
 //   </BrowserRouter>
 // )
+=======
+>>>>>>> 62002bf8083af623ca5da7d3dcddb1b23d8b40ec
 
 ReactDOM.render(
   <Provider store = {store}>
@@ -24,7 +27,10 @@ ReactDOM.render(
     <Switch>
             <Route exact path = '/' component = { App } />
             <Route  path = '/signin' component = { SignIn } />
+<<<<<<< HEAD
 
+=======
+>>>>>>> 62002bf8083af623ca5da7d3dcddb1b23d8b40ec
       </Switch>
     </BrowserRouter></Provider>, document.getElementById('root'));
 
