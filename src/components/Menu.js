@@ -1,56 +1,120 @@
+import './Menu.css';
 import React, { Component } from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import { connect } from 'react-redux';
 
-const styles = theme => ({
-  button: {
-    margin: theme.spacing.unit,
-  },
-});
+
 
 class Menu extends Component  {
+  constructor() {
+    super();
+    this.state = {
+      breakfeast : false,
+      day: false
+    }
+  }
+
+
+handleBreakfeast() {
+    this.setState({ breakfeast : true });
+}
+handleDay() {
+  this.setState({ breakfeast : false });
+}
+
 
   render() {
-    const { classes } = this.props;
 
+console.log(this.props);
     return (
+
+
   <div>
+
   <Grid container
     direction="row"
     justify="center"
     alignItems="center">
+    <Button variant="contained" color="secondary" size= "large"  className= 'btn-margin' onClick={()=> {this.handleBreakfeast()}}>
+           Desayuno
+    </Button>
 
-      <Button variant="contained" size="large" color="secondary" className={classes.button}>
-        Desayuno
-      </Button>
-      <Button variant="contained" size="large" color="secondary" className={classes.button}>
-        Menu del día
-      </Button>
-      </Grid>
-      <Grid
-      item xs={6}>
-      <Grid>
-      <Button variant="contained" size="large" color="primary" className={classes.button}>
-        Cafe americano $5
-      </Button>
-      <Button variant="contained" size="large" color="primary" className={classes.button}>
-        Cafe con leche $7
-      </Button>
-      </Grid>
-<Grid>
-<Button variant="contained" size="large" color="primary" className={classes.button}>
-  Sandwich de jamón y queso $ 10
-</Button>
+    <Button variant="contained" color="secondary" size= "large"   onClick={()=> {this.handleDay()}}>
+           Del día
+    </Button>
 </Grid>
-<Grid>
-<Button variant="contained" size="large" color="primary" className={classes.button}>
-  Jugo natural	$ 7
-</Button>
-</Grid>
-      </Grid>
+  {this.state.breakfeast ?
+    <Grid container
+      direction="row"
+      justify="center"
+      alignItems="center" xs = {6}>
+    <Button variant="contained" color="primary" className= 'btn-margin' >
+          <Typography color="inherit" >Cafe americano</Typography>
+          <p variant="h6" color="inherit" >$ 5</p>
+    </Button>
+    <Button variant="contained" color="primary" >
+    <Typography color="inherit" >Cafe con leche</Typography>
+    <p variant="h6" color="inherit" >$ 7</p>
+    </Button>
+    <Button variant="contained" color="primary" className= 'btn-margin'>
+    <Typography color="inherit" >Sandwich de jamón y queso</Typography>
+    <p variant="h6" color="inherit">$ 10</p>
+    </Button>
+    <Button variant="contained" color="primary" >
+    <Typography color="inherit" >Jugo natural	</Typography>
+    <p variant="h6" color="inherit">$ 7</p>
+    </Button>
+    </Grid>
+    :     <Grid container
+          direction="row"
+          justify="center"
+          alignItems="center" xs={6}>
+        <Button variant="contained" color="primary" className= 'btn-margin' >
+        <Typography color="inherit" >Hamburguesas Simple </Typography>
+        <p variant="h6" color="inherit">$ 10</p>
+        </Button>
+        <Button variant="contained" color="primary" >
+        <Typography color="inherit" >Hamburguesas Doble </Typography>
+        <p variant="h6" color="inherit" > $ 15</p>
+        </Button>
+        <Button variant="contained" color="primary" className= 'btn-margin'>
+        <Typography color="inherit" >Papas fritas </Typography>
+        <p variant="h6" color="inherit"> $ 5</p>
+        </Button>
+        <Button variant="contained" color="primary" >
+        <Typography color="inherit" >Onion Rings </Typography>
+        <p variant="h6" color="inherit"> $ 7</p>
+        </Button>
+        <Button variant="contained" color="primary" className= 'btn-margin'>
+        <Typography color="inherit" >Agua 500ml </Typography>
+        <p variant="h6" color="inherit"> $ 5</p>
+        </Button>
+        <Button variant="contained" color="primary" >
+        <Typography color="inherit" >Agua 700ml </Typography>
+        <p variant="h6" color="inherit"> $ 8</p>
+        </Button>
+        <Button variant="contained" color="primary" className= 'btn-margin'>
+        <Typography color="inherit" >refresco 500ml </Typography>
+        <p variant="h6" color="inherit"> $ 8</p>
+        </Button>
+        <Button variant="contained" color="primary" >
+        <Typography color="inherit" >refresco 700ml </Typography>
+        <p variant="h6" color="inherit"> $ 10</p>
+        </Button>
+        </Grid> }
+
+
   </div>
     );
   }
 }
-export default withStyles(styles)(Menu)
+
+const mapStateToProps = state => {
+  return {
+    menus: state.menu.menus
+  }
+}
+
+export default connect(mapStateToProps)(Menu);

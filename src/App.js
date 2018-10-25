@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { withRouter } from 'react-router-dom';
+
 
 // Components
 import Navbar from './components/Navbar';
@@ -18,4 +18,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+export default App;
