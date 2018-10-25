@@ -23,20 +23,20 @@ const initState = {
       { id: 3, name: 'Agua',
       sizes: [
         { id: 1, size: "500ml", price: 5, },
-        { id: 1, size: "700ml", price: 8, }
+        { id: 2, size: "700ml", price: 8, }
       ],},
       { id: 4, name: 'Refrescos',
       sizes: [
         { id: 1, size: "500ml", price: 7, },
-        { id: 1, size: "700ml", price: 10, }
+        { id: 2, size: "700ml", price: 10, }
       ],},
     ],
 
     Desayuno: [
-      { id: 1, size: "Cafe americano	", price: 5, },
-      { id: 1, size: "Cafe con leche", price: 7, },
-      { id: 1, size: "Sandwich de jamón y queso", price: 10, },
-      { id: 1, size: "Jugo natural", price: 7, },
+      { id: 1, name: "Cafe americano	", price: 5, },
+      { id: 2, name: "Cafe con leche", price: 7, },
+      { id: 3, name: "Sandwich de jamón y queso", price: 10, },
+      { id: 4, name: "Jugo natural", price: 7, },
     ],
       },
 
