@@ -43,7 +43,11 @@ class Menu extends Component  {
   Sandwich de jamón y queso $ 10
 </Button>
 </Grid>
-
+<Grid>
+<Button variant="contained" size="large" color="primary" className={classes.button}>
+  Jugo natural	$ 7
+</Button>
+</Grid>
       </Grid>
   </div>
     );
