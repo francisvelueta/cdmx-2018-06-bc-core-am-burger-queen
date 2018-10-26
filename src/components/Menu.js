@@ -4,8 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { connect } from 'react-redux';
+import MenuBreakfeast from './MenuBreakfeast'
 
-import MenuList from './MenuList';
 
 
 class Menu extends Component  {
@@ -27,7 +27,6 @@ handleDay() {
 
 
   render() {
-
 const {menus} = this.props
     return (
 
@@ -46,13 +45,8 @@ const {menus} = this.props
            Del día
     </Button>
 </Grid>
-<Grid container
-  direction="row"
-  justify="center"
-  alignItems="center" xs = {6}>
 
-  </Grid>
-  <MenuList menus = {menus} />
+  <MenuBreakfeast menus = {menus}/>
 
   </div>
     );
