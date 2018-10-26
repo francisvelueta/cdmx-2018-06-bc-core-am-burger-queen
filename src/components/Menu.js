@@ -16,14 +16,17 @@ class Menu extends Component  {
     this.state = {
       breakfeast : false,
       day: false,
+      band: false,
+
     }
+
   }
 
 handleBreakfeast() {
-    this.setState({ breakfeast : true });
+    this.setState({ breakfeast : true, });
 }
 handleDay() {
-  this.setState({ breakfeast : false });
+  this.setState({ breakfeast : false, });
 }
 
 
@@ -47,7 +50,7 @@ handleDay() {
     </Button>
     </Grid>
     <Grid xs ={12}>
-    { this.state.breakfeast ? <MenuBreakfeast menus = {menus}/>: <MenuDaily menus = {menus}/> }
+    { this.state.breakfeast ? <MenuBreakfeast menus = {menus} band = {this.state.band} />: <MenuDaily menus = {menus}/> }
 
     </Grid>
 

@@ -49,22 +49,32 @@ constructor(){
 
 
 addProduc (name, price) {
-  product.push({ name, price });
-  this.setState({
-  products: product });
-  console.log(this.state.products);
+
+    product.push({ name, price });
+    this.setState({
+    products: product });
+    console.log(this.state.products);
+
+
 
 }
 
 handlecoki() {
+product= [];
 this.props.history.push('/cocina');
 
 }
+vaciar() {
+  this.setState({
+  products: [{name: '', price: ''}]});
+  product= [];
+}
 
 render(){
-
   const menus = this.props.menus;
   const classes = this.props.styles;
+let bandera = this.props.band;
+
 
   return (
     <MuiThemeProvider theme={theme}>
@@ -84,22 +94,27 @@ render(){
 <TableCell numeric></TableCell>
 </TableHead>
 
+
 {this.state.products.map(item => {
-  return  (
-    <TableRow key={item.id}>
-    <TableCell component="th" scope="row">
-          {item.name}
-          </TableCell>
-          <TableCell numeric> ${item.price} </TableCell>
-          <TableCell numeric></TableCell>
-        </TableRow>)
+return  (
+  <TableRow key={item.id}>
+  <TableCell component="th" scope="row">
+        {item.name}
+        </TableCell>
+        <TableCell numeric> ${item.price} </TableCell>
+        <TableCell numeric></TableCell>
+      </TableRow>)
 })}
+
 
 </TableStyle>
 </PaperStyle>
 
 <Button variant="contained" color="secondary" size= "large"   onClick={()=> {this.handlecoki()}}>
        Enviar a Cocina
+</Button>
+<Button variant="contained" color="secondary" size= "large"  className= 'btn-margin'   onClick={()=> {this.vaciar()}}>
+       Vaciar productos
 </Button>
   </MuiThemeProvider>
   )
