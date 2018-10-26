@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import SignIn from './components/Signin'
+import Cocina from './components/Cocina'
 import { createStore } from 'redux';
 import combineReducers from './reducers/combineReducers';
 import { Provider } from 'react-redux';
@@ -24,6 +25,7 @@ ReactDOM.render(
     <Switch>
             <Route exact path = '/' component = { App } />
             <Route  path = '/signin' component = { SignIn } />
+            <Route  path = '/cocina' component = { Cocina } />
 
       </Switch>
     </BrowserRouter></Provider>, document.getElementById('root'));

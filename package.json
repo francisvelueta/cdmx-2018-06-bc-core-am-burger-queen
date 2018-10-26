@@ -2,7 +2,7 @@
   "name": "burger-queen-tmp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://francisvelueta.github.io/cdmx-2018-06-bc-core-am-burger-queen",
+  "homepage": "https://francisvelueta.github.io/cdmx-2018-06-bc-core-am-burger-queen/",
   "dependencies": {
     "@material-ui/core": "^3.2.2",
     "@material-ui/icons": "^3.0.1",
