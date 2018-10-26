@@ -16,10 +16,8 @@ class Menu extends Component  {
     this.state = {
       breakfeast : false,
       day: false,
-
     }
   }
-
 
 handleBreakfeast() {
     this.setState({ breakfeast : true });
@@ -30,10 +28,8 @@ handleDay() {
 
 
   render() {
-const { menus } = this.props
+    const { menus } = this.props
     return (
-
-
   <div>
 
   <Grid container
@@ -53,10 +49,7 @@ const { menus } = this.props
 
     </Grid>
 
-
-
-
-  </div>
+</div>
     );
   }
 }
