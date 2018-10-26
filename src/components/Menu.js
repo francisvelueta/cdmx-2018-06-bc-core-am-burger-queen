@@ -4,7 +4,9 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { connect } from 'react-redux';
-import MenuBreakfeast from './MenuBreakfeast'
+import MenuBreakfeast from './MenuBreakfeast';
+import MenuDaily from './MenuDaily';
+
 
 
 
@@ -13,7 +15,8 @@ class Menu extends Component  {
     super();
     this.state = {
       breakfeast : false,
-      day: false
+      day: false,
+
     }
   }
 
@@ -27,7 +30,7 @@ handleDay() {
 
 
   render() {
-const {menus} = this.props
+const { menus } = this.props
     return (
 
 
@@ -44,9 +47,14 @@ const {menus} = this.props
     <Button variant="contained" color="secondary" size= "large"   onClick={()=> {this.handleDay()}}>
            Del día
     </Button>
-</Grid>
+    </Grid>
+    <Grid xs ={12}>
+    { this.state.breakfeast ? <MenuBreakfeast menus = {menus}/>: <MenuDaily menus = {menus}/> }
 
-  <MenuBreakfeast menus = {menus}/>
+    </Grid>
+
+
+
 
   </div>
     );

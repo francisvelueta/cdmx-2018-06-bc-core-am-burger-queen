@@ -2,7 +2,7 @@ const initState = {
   menus: [
     {
       Dia: [
-        {id: 1, item: 'Hamburguesas Simple', price: 10,
+        {id: 1, name: 'Hamburguesas Simple', price: 10,
         types: [
           {type: "Res"},
           {type: "Pollo"},
@@ -15,7 +15,7 @@ const initState = {
           {id: 3, type: "Vegana"}
         ],
           Acompanamientos: [
-          {id: 1, item: "Papas fritas"},
+          {id: 1, name: "Papas fritas"},
           {id: 2, type: "Onion Rings"},
           ],
         },
