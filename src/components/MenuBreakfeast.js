@@ -48,16 +48,33 @@ constructor(){
 }
 
 
+<<<<<<< HEAD
 addProduc (id, name, price) {
   product.push({id, name, price });
   this.setState({
   products: product });
+=======
+addProduc (name, price) {
+
+    product.push({ name, price });
+    this.setState({
+    products: product });
+    console.log(this.state.products);
+
+
+>>>>>>> 7278d5d2287651b521bbc26984870fca3c9db689
 
 }
 
 handlecoki() {
+product= [];
 this.props.history.push('/cocina');
 
+}
+vaciar() {
+  this.setState({
+  products: [{name: '', price: ''}]});
+  product= [];
 }
 
 deleteItem(id) {
@@ -67,9 +84,10 @@ deleteItem(id) {
   }
 
 render(){
-
   const menus = this.props.menus;
   const classes = this.props.styles;
+let bandera = this.props.band;
+
 
   return (
     <MuiThemeProvider theme={theme}>
@@ -89,6 +107,7 @@ render(){
 <TableCell numeric></TableCell>
 </TableHead>
 
+<<<<<<< HEAD
 {this.state.products.map((item, i) => {
     return  (
 
@@ -100,13 +119,29 @@ render(){
           <TableCell ><i className="material-icons" onClick= {()=>this.deleteItem(i)}>
 delete</i></TableCell>
         </TableRow>)
+=======
+
+{this.state.products.map(item => {
+return  (
+  <TableRow key={item.id}>
+  <TableCell component="th" scope="row">
+        {item.name}
+        </TableCell>
+        <TableCell numeric> ${item.price} </TableCell>
+        <TableCell numeric></TableCell>
+      </TableRow>)
+>>>>>>> 7278d5d2287651b521bbc26984870fca3c9db689
 })}
+
 
 </TableStyle>
 </PaperStyle>
 
 <Button variant="contained" color="secondary" size= "large"  onClick={()=> {this.handlecoki()}}>
        Enviar a Cocina
+</Button>
+<Button variant="contained" color="secondary" size= "large"  className= 'btn-margin'   onClick={()=> {this.vaciar()}}>
+       Vaciar productos
 </Button>
   </MuiThemeProvider>
   )
