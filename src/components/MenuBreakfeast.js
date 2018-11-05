@@ -44,15 +44,14 @@ class MenuBreakfeast extends Component {
 constructor(){
   super()
   this.state = {
-    products: [{name: '', price: ''}] }
+    products: [{id: '', name: '', price: ''}] }
 }
 
 
-addProduc (name, price) {
-  product.push({ name, price });
+addProduc (id, name, price) {
+  product.push({id, name, price });
   this.setState({
   products: product });
-  console.log(this.state.products);
 
 }
 
@@ -60,6 +59,12 @@ handlecoki() {
 this.props.history.push('/cocina');
 
 }
+
+deleteItem(id) {
+
+  product = product.filter((item, i) => i !== id)
+  this.setState({products: product})
+  }
 
 render(){
 
@@ -70,8 +75,8 @@ render(){
     <MuiThemeProvider theme={theme}>
     <Grid xs= {6}>
     {menus && menus.map(menu => {
-      return menu.Desayuno.map(item => {
-        return <Button  type ="submit" variant="contained" color="primary" size= "large" className= 'btn-margin' key ={item.id} onClick={e => this.addProduc(item.name, item.price)}>{item.name} ${item.price}</Button>;
+      return menu.Desayuno.map((item, i) => {
+        return <Button  type ="submit" variant="contained" color="primary" size= "large" className= 'btn-margin' key ={i} onClick={e => this.addProduc(i, item.name, item.price)}>{item.name} ${item.price}</Button>;
       })
     })}
 
@@ -84,21 +89,23 @@ render(){
 <TableCell numeric></TableCell>
 </TableHead>
 
-{this.state.products.map(item => {
-  return  (
+{this.state.products.map((item, i) => {
+    return  (
+
     <TableRow key={item.id}>
     <TableCell component="th" scope="row">
           {item.name}
           </TableCell>
           <TableCell numeric> ${item.price} </TableCell>
-          <TableCell numeric></TableCell>
+          <TableCell ><i className="material-icons" onClick= {()=>this.deleteItem(i)}>
+delete</i></TableCell>
         </TableRow>)
 })}
 
 </TableStyle>
 </PaperStyle>
 
-<Button variant="contained" color="secondary" size= "large"   onClick={()=> {this.handlecoki()}}>
+<Button variant="contained" color="secondary" size= "large"  onClick={()=> {this.handlecoki()}}>
        Enviar a Cocina
 </Button>
   </MuiThemeProvider>
